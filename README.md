@@ -14,7 +14,7 @@ To set up the Dashboard Exporter on your local machine, follow these steps:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/dashboard-exporter.git
+   git clone https://github.com/JoshuaMaciel337/dashboard-exporter.git
    cd dashboard-exporter
    ```
 
