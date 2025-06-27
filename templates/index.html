@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="filters">
+    <h2>Filters</h2>
+    <form method="get" action="{{ url_for('index') }}">
+        <div class="filter-group">
+            <label for="timeframe">Timeframe</label>
+            <select id="timeframe" name="timeframe">
+                <option value="7" selected>7 days</option>
+                <option value="14">14 days</option>
+                <option value="30">30 days</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender">
+                <option value="all" selected>All</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="category">Category</label>
+            <select id="category" name="category">
+                <option value="" selected>Select a value</option>
+                <option value="1">Category 1</option>
+                <option value="2">Category 2</option>
+                <option value="3">Category 3</option>
+            </select>
+        </div>
+    </form>
+</section>
+
+<section class="statistics">
+    <div class="stat-card">
+        <h3>Total Products</h3>
+        <div class="stat-value">0</div>
+        <div class="stat-subtitle">100% of inventory</div>
+    </div>
+
+    <div class="stat-card">
+        <h3>Critical Stock</h3>
+        <div class="stat-value">0</div>
+        <div class="stat-subtitle">NaN% of inventory</div>
+    </div>
+
+    <div class="stat-card">
+        <h3>Need Production</h3>
+        <div class="stat-value">0</div>
+        <div class="stat-subtitle">NaN% of inventory</div>
+    </div>
+
+    <div class="stat-card">
+        <h3>Excess Stock</h3>
+        <div class="stat-value">0</div>
+        <div class="stat-subtitle">NaN% of inventory</div>
+    </div>
+</section>
+
+<section class="stock-data">
+    <h2>Stock Data</h2>
+    <div class="table-container">
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Name <i class="fas fa-sort"></i></th>
+                        <th>SKU <i class="fas fa-sort"></i></th>
+                        <th>Gender <i class="fas fa-sort"></i></th>
+                        <th>Category <i class="fas fa-sort"></i></th>
+                        <th>Current Stock <i class="fas fa-sort"></i></th>
+                        <th>Sales (7d) <i class="fas fa-sort"></i></th>
+                        <th>Daily Average <i class="fas fa-sort"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="7" class="no-data">No Rows To Show</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination">
+            <div class="pagination-info">0 to 0 of 0</div>
+            <div class="pagination-controls">
+                <button class="btn-page" disabled><i class="fas fa-chevron-left"></i></button>
+                <span>Page 0 of 0</span>
+                <button class="btn-page" disabled><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="charts">
+    <div class="chart-container">
+        <h2>Top 10 Products (7d)</h2>
+        <div class="chart-placeholder">
+            <i class="fas fa-chart-bar"></i>
+            <span>No data available</span>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <h2>Bottom 30 Products (7d)</h2>
+        <div class="chart-placeholder">
+            <i class="fas fa-chart-bar"></i>
+            <span>No data available</span>
+        </div>
+    </div>
+</section>
+{% endblock %}
