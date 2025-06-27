@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonar Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <noscript>
+        <div class="noscript-warning">
+            <strong>We're sorry but this website doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+        </div>
+    </noscript>
+
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-chart-line"></i>
+                <h1>Sonar</h1>
+            </div>
+            <div class="header-buttons">
+                <a href="{{ url_for('index') }}" class="btn refresh-btn">
+                    <i class="fas fa-sync-alt"></i>
+                    Atualizar dados
+                </a>
+                <a href="{{ url_for('export_excel') }}" class="btn export-btn">
+                    <i class="fas fa-file-excel"></i>
+                    Exportar Excel
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
